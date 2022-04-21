@@ -16,6 +16,14 @@
 
     <ul class="list-unstyled">
     <!-- 1. Display all the reserved books -->
+<<<<<<< HEAD
+=======
+    @foreach ($reserved_books as $book)
+        <li>
+            <strong>{{ $book['title'] }}</strong> by {{ $book['author'] }}, {{ $book['year_published'] }}
+        </li>
+    @endforeach
+>>>>>>> 4a96824 (Lab Exercise 8)
     </ul>
 
 </div>

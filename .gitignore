@@ -6,6 +6,10 @@
 .env
 .env.backup
 .phpunit.result.cache
+<<<<<<< HEAD
+=======
+docker-compose.override.yml
+>>>>>>> 4a96824 (Lab Exercise 8)
 Homestead.json
 Homestead.yaml
 npm-debug.log

@@ -1,10 +1,18 @@
 php:
   preset: laravel
+<<<<<<< HEAD
+=======
+  version: 8
+>>>>>>> 4a96824 (Lab Exercise 8)
   disabled:
     - no_unused_imports
   finder:
     not-name:
       - index.php
+<<<<<<< HEAD
+=======
+      - server.php
+>>>>>>> 4a96824 (Lab Exercise 8)
 js:
   finder:
     not-name:

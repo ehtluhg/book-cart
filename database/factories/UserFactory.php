@@ -5,15 +5,22 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
+<<<<<<< HEAD
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
+=======
+>>>>>>> 4a96824 (Lab Exercise 8)
 class UserFactory extends Factory
 {
     /**
      * Define the model's default state.
      *
+<<<<<<< HEAD
      * @return array<string, mixed>
+=======
+     * @return array
+>>>>>>> 4a96824 (Lab Exercise 8)
      */
     public function definition()
     {
@@ -29,7 +36,11 @@ class UserFactory extends Factory
     /**
      * Indicate that the model's email address should be unverified.
      *
+<<<<<<< HEAD
      * @return static
+=======
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+>>>>>>> 4a96824 (Lab Exercise 8)
      */
     public function unverified()
     {

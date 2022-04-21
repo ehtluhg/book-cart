@@ -29,6 +29,7 @@ class EventServiceProvider extends ServiceProvider
     {
         //
     }
+<<<<<<< HEAD
 
     /**
      * Determine if events and listeners should be automatically discovered.
@@ -39,4 +40,6 @@ class EventServiceProvider extends ServiceProvider
     {
         return false;
     }
+=======
+>>>>>>> 4a96824 (Lab Exercise 8)
 }

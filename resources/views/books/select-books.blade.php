@@ -15,14 +15,22 @@
     <h1>Hello {{ $first_name }} {{ $last_name }}!</h1>
 
     <!-- 1. point to the appropriate form handler with the proper HTTP request method -->
+<<<<<<< HEAD
     <form action="/???????" method="??????">
+=======
+    <form action="/reserve-books" method="POST">
+>>>>>>> 4a96824 (Lab Exercise 8)
     @csrf
     @foreach ($books as $book)
     <div class="form-check">
         <input class="form-check-input" type="checkbox" name="books[]" value="{{ $book['code'] }}">
         <label class="form-check-label">
             <!-- 2. Display the Book TITLE, AUTHOR, and YEAR PUBLISHED -->
+<<<<<<< HEAD
             <strong>{{ ________________ }}</strong> by {{ ______________________ }}, {{ _________________ }}
+=======
+            <strong>{{ $book['title'] }}</strong> by {{ $book['author'] }}, {{ $book['year_published'] }}
+>>>>>>> 4a96824 (Lab Exercise 8)
         </label>
     </div>
     @endforeach

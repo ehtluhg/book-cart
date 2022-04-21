@@ -20,6 +20,18 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/home';
 
     /**
+<<<<<<< HEAD
+=======
+     * The controller namespace for the application.
+     *
+     * When present, controller route declarations will automatically be prefixed with this namespace.
+     *
+     * @var string|null
+     */
+    // protected $namespace = 'App\\Http\\Controllers';
+
+    /**
+>>>>>>> 4a96824 (Lab Exercise 8)
      * Define your route model bindings, pattern filters, etc.
      *
      * @return void
@@ -29,11 +41,21 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
+<<<<<<< HEAD
             Route::middleware('api')
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
+=======
+            Route::prefix('api')
+                ->middleware('api')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/api.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+>>>>>>> 4a96824 (Lab Exercise 8)
                 ->group(base_path('routes/web.php'));
         });
     }
@@ -46,7 +68,11 @@ class RouteServiceProvider extends ServiceProvider
     protected function configureRateLimiting()
     {
         RateLimiter::for('api', function (Request $request) {
+<<<<<<< HEAD
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
+=======
+            return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
+>>>>>>> 4a96824 (Lab Exercise 8)
         });
     }
 }

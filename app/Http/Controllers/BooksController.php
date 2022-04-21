@@ -41,6 +41,7 @@ class BooksController extends Controller
     public function saveCompleteName(Request $request)
     {
         // 1. Save the first name and last name of the user into the session (https://laravel.com/docs/9.x/session)
+<<<<<<< HEAD
         $request->session()->___________('first_name', $request->first_name);
         $request->session()->___________('last_name', $request->last_name);
 
@@ -48,6 +49,17 @@ class BooksController extends Controller
 
         // 2. Read this documentation for redirection (https://laravel.com/docs/9.x/redirects), and redirect to the page or endpoint where the books are listed
         return redirect('/??????????');
+=======
+
+        $first_name = $request->first_name;
+        $last_name = $request->last_name;
+        $request->session()->put('first_name', $request->first_name);
+        $request->session()->put('last_name', $request->last_name);
+
+
+        // 2. Read this documentation for redirection (https://laravel.com/docs/9.x/redirects), and redirect to the page or endpoint where the books are listed
+        return redirect('/select-books');
+>>>>>>> 4a96824 (Lab Exercise 8)
     }
 
     public function listBooks(Request $request)
@@ -55,38 +67,65 @@ class BooksController extends Controller
         $books = static::BOOKS;
 
         // 1. You would need to retrieve the first name and last name from the session, and save it to these variable names $first_name, $last_name
+<<<<<<< HEAD
         $first_name = $request->session()->___________('first_name');
         $last_name = $request->session()->____________('last_name');
+=======
+        $first_name = $request->session()->get('first_name');
+        $last_name = $request->session()->get('last_name');
+>>>>>>> 4a96824 (Lab Exercise 8)
 
         return view('books.select-books', compact('books', 'first_name', 'last_name'));
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4a96824 (Lab Exercise 8)
     public function reserveBooks(Request $request)
     {
         $request->session()->forget('books');
 
         // 1. Save all the selected books array that is stored in a session variable https://laravel.com/docs/9.x/session#storing-data
         foreach ($request->books as $book) {
+<<<<<<< HEAD
             $request->session()->______________('books', $book);
         }
 
         return redirect('thank-you');
+=======
+            $request->session()->push('books', $book);
+        }
+
+        return redirect('/thank-you');
+>>>>>>> 4a96824 (Lab Exercise 8)
     }
 
     public function showThankYouPage(Request $request)
     {
         $books = static::BOOKS;
 
+<<<<<<< HEAD
         $first_name = $request->session()->_________________________;
         $last_name = _______________________________________________;
+=======
+        $first_name = $request->session()->get('first_name');
+        $last_name = $request->session()->get('last_name');
+>>>>>>> 4a96824 (Lab Exercise 8)
 
         $book_codes = $request->session()->get('books');
         $reserved_books = [];
 
         foreach ($books as $book) {
+<<<<<<< HEAD
             // if (in_array()) {
             //     array_push($reserved_books, $book);
             // }
+=======
+            if (in_array($book['code'], $book_codes)) {
+                array_push($reserved_books, $book);
+            }
+>>>>>>> 4a96824 (Lab Exercise 8)
         }
 
         $request->session()->flush();
